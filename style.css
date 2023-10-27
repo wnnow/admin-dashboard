@@ -4,6 +4,11 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
 }
 
+:root {
+  --color-secondary-text: #909090;
+  --main-color: #1992d4;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -36,7 +41,7 @@ li {
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 250px 4fr;
+  grid-template-rows: 200px 4fr;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -132,11 +137,11 @@ li {
 }
 
 .user-method > button {
-  background-color: #1992d4;
+  background-color: var(--main-color);
   color: white;
   /* width: 75px; */
   padding: 8px 16px;
-  border: 1px solid #1992d4;
+  border: 1px solid var(--main-color);
   border-radius: 32px;
   cursor: pointer;
   font-size: 1rem;
@@ -148,7 +153,7 @@ li {
 
 /* side bar*/
 .sidebar {
-  background-color: #1992d4;
+  background-color: var(--main-color);
   color: white;
   padding: 16px;
   grid-column: 1/2;
@@ -206,7 +211,6 @@ li {
 .content-header-section,
 .announcement-header-section,
 .trending-header {
-  margin-bottom: 16px;
   font-size: 1.15rem;
   font-weight: 500;
 }
@@ -239,8 +243,10 @@ li {
 }
 
 .card-info-secondary-text {
-  color: #909090;
+  color: var(--color-secondary-text);
   margin-bottom: 16px;
+
+  margin-top: 8px;
 }
 
 .card-button-container {
@@ -250,6 +256,67 @@ li {
   gap: 16px;
 }
 
+.announcement-card-container {
+  display: grid;
+  padding: 16px 16px 16px 0;
+}
+
+.announcement-card {
+  background-color: white;
+  padding: 16px 32px 0 32px;
+}
+
+.announcement-card:first-child {
+  /* border-top-left-radius: 8px;
+  border-top-right-radius: 8px; */
+  border-radius: 8px 8px 0 0;
+}
+.announcement-card:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.announcement-info {
+  border-bottom: 1px solid #969a9e;
+  padding-bottom: 16px;
+  color: var(--color-secondary-text);
+}
+
+.announcement-card:first-child {
+  padding-top: 32px;
+}
+
+.announcement-card:last-child > .announcement-info {
+  border-bottom-style: none;
+  padding-bottom: 32px;
+}
+
+.announcement-header {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.trending-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px 32px;
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+  margin-right: 16px;
+}
+
+.trending-card {
+  display: grid;
+  grid-template-columns: 50px auto;
+  align-items: center;
+  column-gap: 16px;
+}
+
 .trending-card > img {
   width: 50px;
+  border-radius: 50%;
+  grid-row: 1/3;
+}
+.trending-id-name {
+  font-weight: 500;
 }
