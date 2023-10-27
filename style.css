@@ -36,7 +36,7 @@ li {
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 250px 4fr;
   min-width: 100vw;
   min-height: 100vh;
 }
@@ -196,6 +196,58 @@ li {
 
 .main-content-container {
   grid-column: 2/-1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 32px 16px;
+  background-color: #e2e8f0;
+  gap: 16px;
+}
+.content-header-section,
+.announcement-header-section,
+.trending-header {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.content-container {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+.content-header-section {
+  padding-left: 16px;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 16px;
+  gap: 16px;
+}
+
+.card-container > .card {
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+  border-left: 10px solid #f0b429;
+  box-shadow: 3px 3px 5px 1px #ccc;
+}
+
+.card-header {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.card-info-secondary-text {
+  color: #909090;
+  margin-bottom: 16px;
+}
+
+.card-button-container {
+  display: grid;
+  justify-content: flex-end;
+  grid-template-columns: repeat(3, 25px);
+  gap: 16px;
 }
 
 .trending-card > img {
